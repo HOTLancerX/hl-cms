@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Add New Post</title>
+<style>
+    ::-webkit-scrollbar {
+        width: 0.5em;
+        height: 0.5em;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #ccc;
+    }
+    ::-webkit-scrollbar-track {
+        background: #ccc;
+    }
+    .bg-grey-darker {
+        background-color: #606f7b;
+    }
+    .bg-grey-darkest {
+        background-color: #3d4852;
+    }
+    .text-grey-darker {
+        color: #606f7b;
+    }
+    .border-blue-dark {
+        border-color: #2779bd;
+    }
+    #main {
+      display: grid;
+      grid-template-columns: 6rem auto;
+    }
+
+    @media (min-width: 1200px) {  
+      #main { grid-template-columns: 12rem auto; }
+      .xl\:pin-none {left: auto;}
+    }
+    a {
+      text-decoration: none;
+    }
+    .pt-16 {
+      padding-top: 4rem;}
+    .top-full { top: 100%; }
+    .left-full { left: 100%; }
+    @media (min-width: 1200px) {
+      .xl\:pin-none { left: auto; }
+    }
+    .group:hover .group-hover\:block {
+      display: block;
+    }
+</style>
+    </head>
+
+    <body class="bg-gray-100">
+        <div class="font-sans antialiased h-screen">
+            
+            <!-- Content -->
+            <div class="w-full p-5">
+                <h1 class="mb-4">Add New Post</h1>
+                <div class="flex">
+                  <div class="w-9/12 mr-5">
+                    <div class="w-full mb-4">
+                      <div class="box border rounded flex flex-col shadow bg-white">
+                        <div class="box__title bg-slate-50 px-3 py-2 border-b">
+                          <h3 class="text-sm text-grey-darker font-medium">Add title</h3>
+                        </div>
+                        <textarea placeholder="enter your title" class="outline-0 text-grey-darkest flex-1 p-2 m-1 bg-transparent" name="tt"></textarea>
+                      </div>
+                      <label for="basic-url" class="text-grey-darker inline-block mt-2">Your vanity URL</label>
+                      <div class="flex flex-wrap items-stretch w-full mb-4 relative">
+                        <div class="flex -mr-px">
+                          <span class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm">https://example.com/news/</span>
+                        </div>  
+                        <input type="text" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative outline-0" >
+                      </div>
+                    </div>
+                    <div id="boxContainer" class="grid md:grid-cols-2 grid-cols-1">
+                  </div>
+                    
+                  </div>
+                  <div class="w-3/12 sticky top-0">
+                    <div class="w-full border-2 border-slate-200 mb-4">
+                      <div x-data="{show: true}">
+                        <a href="#" x-on:click.prevent="show = !show" class="w-full relative z-10 bg-slate-200 flex items-center justify-between p-2">
+                          <span class="inline-block">Publish</span>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current inline-block w-4 h-4 transform transition duration-150" x-bind:class="{ 'rotate-180': show }">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </a>
+                        <div x-show.transition="show" class="relative z-20 bg-white">
+                          <div class="flex items-center justify-between m-2">
+                        <button class="px-2 py-1 border-2 border-blue-200 text-blue-300  duration-300">Save Draft</button>
+                        <button class="px-2 py-1 border-2 border-blue-200 text-blue-300  duration-300">Preview</button>
+                      </div>
+
+                      <div class="px-2">
+                        <div class="flex items-center my-1">
+                          <p class="flex items-center">
+                            <svg class="svg-icon w-5 mr-1" viewBox="0 0 20 20">
+                              <path d="M12.319,5.792L8.836,2.328C8.589,2.08,8.269,2.295,8.269,2.573v1.534C8.115,4.091,7.937,4.084,7.783,4.084c-2.592,0-4.7,2.097-4.7,4.676c0,1.749,0.968,3.337,2.528,4.146c0.352,0.194,0.651-0.257,0.424-0.529c-0.415-0.492-0.643-1.118-0.643-1.762c0-1.514,1.261-2.747,2.787-2.747c0.029,0,0.06,0,0.09,0.002v1.632c0,0.335,0.378,0.435,0.568,0.245l3.483-3.464C12.455,6.147,12.455,5.928,12.319,5.792 M8.938,8.67V7.554c0-0.411-0.528-0.377-0.781-0.377c-1.906,0-3.457,1.542-3.457,3.438c0,0.271,0.033,0.542,0.097,0.805C4.149,10.7,3.775,9.762,3.775,8.76c0-2.197,1.798-3.985,4.008-3.985c0.251,0,0.501,0.023,0.744,0.069c0.212,0.039,0.412-0.124,0.412-0.34v-1.1l2.646,2.633L8.938,8.67z M14.389,7.107c-0.34-0.18-0.662,0.244-0.424,0.529c0.416,0.493,0.644,1.118,0.644,1.762c0,1.515-1.272,2.747-2.798,2.747c-0.029,0-0.061,0-0.089-0.002v-1.631c0-0.354-0.382-0.419-0.558-0.246l-3.482,3.465c-0.136,0.136-0.136,0.355,0,0.49l3.482,3.465c0.189,0.186,0.568,0.096,0.568-0.245v-1.533c0.153,0.016,0.331,0.022,0.484,0.022c2.592,0,4.7-2.098,4.7-4.677C16.917,9.506,15.948,7.917,14.389,7.107 M12.217,15.238c-0.251,0-0.501-0.022-0.743-0.069c-0.212-0.039-0.411,0.125-0.411,0.341v1.101l-2.646-2.634l2.646-2.633v1.116c0,0.174,0.126,0.318,0.295,0.343c0.158,0.024,0.318,0.034,0.486,0.034c1.905,0,3.456-1.542,3.456-3.438c0-0.271-0.032-0.541-0.097-0.804c0.648,0.719,1.022,1.659,1.022,2.66C16.226,13.451,14.428,15.238,12.217,15.238"></path>
+                            </svg>
+                            Status:
+                          </p>
+                            <strong class="ml-2">Draft</strong>
+                        </div>
+                        <div class="flex items-center my-1">
+                          <p class="flex items-center">
+                            <svg class="svg-icon w-5 mr-1" viewBox="0 0 20 20">
+                              <path d="M10,6.978c-1.666,0-3.022,1.356-3.022,3.022S8.334,13.022,10,13.022s3.022-1.356,3.022-3.022S11.666,6.978,10,6.978M10,12.267c-1.25,0-2.267-1.017-2.267-2.267c0-1.25,1.016-2.267,2.267-2.267c1.251,0,2.267,1.016,2.267,2.267C12.267,11.25,11.251,12.267,10,12.267 M18.391,9.733l-1.624-1.639C14.966,6.279,12.563,5.278,10,5.278S5.034,6.279,3.234,8.094L1.609,9.733c-0.146,0.147-0.146,0.386,0,0.533l1.625,1.639c1.8,1.815,4.203,2.816,6.766,2.816s4.966-1.001,6.767-2.816l1.624-1.639C18.536,10.119,18.536,9.881,18.391,9.733 M16.229,11.373c-1.656,1.672-3.868,2.594-6.229,2.594s-4.573-0.922-6.23-2.594L2.41,10l1.36-1.374C5.427,6.955,7.639,6.033,10,6.033s4.573,0.922,6.229,2.593L17.59,10L16.229,11.373z"></path>
+                            </svg>
+                            Visibility:
+                          </p>
+                            <strong class="ml-2">Public</strong>
+                        </div>
+                        <div class="flex items-center my-1">
+                          <p class="flex items-center">
+                            <svg class="svg-icon w-5 mr-1" viewBox="0 0 20 20">
+                              <path d="M16.254,3.399h-0.695V3.052c0-0.576-0.467-1.042-1.041-1.042c-0.576,0-1.043,0.467-1.043,1.042v0.347H6.526V3.052c0-0.576-0.467-1.042-1.042-1.042S4.441,2.476,4.441,3.052v0.347H3.747c-0.768,0-1.39,0.622-1.39,1.39v11.813c0,0.768,0.622,1.39,1.39,1.39h12.507c0.768,0,1.391-0.622,1.391-1.39V4.789C17.645,4.021,17.021,3.399,16.254,3.399z M14.17,3.052c0-0.192,0.154-0.348,0.348-0.348c0.191,0,0.348,0.156,0.348,0.348v0.347H14.17V3.052z M5.136,3.052c0-0.192,0.156-0.348,0.348-0.348S5.831,2.86,5.831,3.052v0.347H5.136V3.052z M16.949,16.602c0,0.384-0.311,0.694-0.695,0.694H3.747c-0.384,0-0.695-0.311-0.695-0.694V7.568h13.897V16.602z M16.949,6.874H3.052V4.789c0-0.383,0.311-0.695,0.695-0.695h12.507c0.385,0,0.695,0.312,0.695,0.695V6.874z M5.484,11.737c0.576,0,1.042-0.467,1.042-1.042c0-0.576-0.467-1.043-1.042-1.043s-1.042,0.467-1.042,1.043C4.441,11.271,4.908,11.737,5.484,11.737z M5.484,10.348c0.192,0,0.347,0.155,0.347,0.348c0,0.191-0.155,0.348-0.347,0.348s-0.348-0.156-0.348-0.348C5.136,10.503,5.292,10.348,5.484,10.348z M14.518,11.737c0.574,0,1.041-0.467,1.041-1.042c0-0.576-0.467-1.043-1.041-1.043c-0.576,0-1.043,0.467-1.043,1.043C13.475,11.271,13.941,11.737,14.518,11.737z M14.518,10.348c0.191,0,0.348,0.155,0.348,0.348c0,0.191-0.156,0.348-0.348,0.348c-0.193,0-0.348-0.156-0.348-0.348C14.17,10.503,14.324,10.348,14.518,10.348z M14.518,15.212c0.574,0,1.041-0.467,1.041-1.043c0-0.575-0.467-1.042-1.041-1.042c-0.576,0-1.043,0.467-1.043,1.042C13.475,14.745,13.941,15.212,14.518,15.212z M14.518,13.822c0.191,0,0.348,0.155,0.348,0.347c0,0.192-0.156,0.348-0.348,0.348c-0.193,0-0.348-0.155-0.348-0.348C14.17,13.978,14.324,13.822,14.518,13.822z M10,15.212c0.575,0,1.042-0.467,1.042-1.043c0-0.575-0.467-1.042-1.042-1.042c-0.576,0-1.042,0.467-1.042,1.042C8.958,14.745,9.425,15.212,10,15.212z M10,13.822c0.192,0,0.348,0.155,0.348,0.347c0,0.192-0.156,0.348-0.348,0.348s-0.348-0.155-0.348-0.348C9.653,13.978,9.809,13.822,10,13.822z M5.484,15.212c0.576,0,1.042-0.467,1.042-1.043c0-0.575-0.467-1.042-1.042-1.042s-1.042,0.467-1.042,1.042C4.441,14.745,4.908,15.212,5.484,15.212z M5.484,13.822c0.192,0,0.347,0.155,0.347,0.347c0,0.192-0.155,0.348-0.347,0.348s-0.348-0.155-0.348-0.348C5.136,13.978,5.292,13.822,5.484,13.822z M10,11.737c0.575,0,1.042-0.467,1.042-1.042c0-0.576-0.467-1.043-1.042-1.043c-0.576,0-1.042,0.467-1.042,1.043C8.958,11.271,9.425,11.737,10,11.737z M10,10.348c0.192,0,0.348,0.155,0.348,0.348c0,0.191-0.156,0.348-0.348,0.348s-0.348-0.156-0.348-0.348C9.653,10.503,9.809,10.348,10,10.348z"></path>
+                            </svg>
+                            Publish
+                          </p>
+                            <input datepicker datepicker-format="mm/dd/yyyy" type="text" class="w-full pl-2 ml-1 outline-0 border-2 border-slate-100" placeholder="Select date">
+                        </div>
+                      </div>
+                      <div class="bg-slate-100 py-2 flex justify-end mt-3">
+                        <button class="rounded-lg px-4 py-1 mr-2 bg-sky-500 text-blue-100 hover:bg-blue-600 duration-300">Publish</button>
+                      </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="w-full border-2 border-slate-200 mb-4" x-data="{show: true}">
+                      <a href="#" x-on:click.prevent="show = !show" class="w-full relative z-10 bg-slate-200 flex items-center justify-between p-2">
+                      <span class="inline-block">Banner</span>
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="stroke-current inline-block w-4 h-4 transform transition duration-150" x-bind:class="{ 'rotate-180': show }">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                      </svg>
+                      </a>
+                      <div x-show.transition="show" class="relative z-20 bg-white">
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Banner</p>
+                              <input type="number" id="numberInput" oninput="openBoxes()" min="1" value="0" class="w-1/4 pl-1 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select date">
+                          </div>
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Banner width</p>
+                              <div class="w-1/4 relative border border-slate-500 text-gray-800 bg-white ">
+                                  <select class="appearance-none w-full pl-1 bg-white outline-0" >
+                                  <option value="w-full">Full</option>
+                                  <option value="container mx-auto">half</option>
+                                  </select>
+                                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">BG Color</p>
+                              <input type="color" value="#fffff" class="w-1/4 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select date">
+                          </div>
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Title width</p>
+                              <div class="w-1/4 relative border border-slate-500 text-gray-800 bg-white ">
+                                  <select class="appearance-none w-full pl-1 bg-white outline-0" >
+                                  <option value="container mx-auto">half</option>
+                                  <option value="w-full">Full</option>
+                                  </select>
+                                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Title BG Color</p>
+                              <input type="color" value="#fffff" class="w-1/4 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select date">
+                          </div>
+                          
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Title Color</p>
+                              <input type="color" value="#fffff" class="w-1/4 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select date">
+                          </div>
+
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Title position</p>
+                              <div class="w-1/4 relative border border-slate-500 text-gray-800 bg-white ">
+                                  <select class="appearance-none w-full pl-1 bg-white outline-0" >
+                                  <option value="text-left">left</option>
+                                  <option value="text-right">Right</option>
+                                  <option value="text-center">Centre</option>
+                                  </select>
+                                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Box width</p>
+                              <div class="w-1/4 relative border border-slate-500 text-gray-800 bg-white ">
+                                  <select class="appearance-none w-full pl-1 bg-white outline-0" >
+                                  <option value="container mx-auto">half</option>
+                                  <option value="w-full">Full</option>
+                                  </select>
+                                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                                      </svg>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="flex items-center p-1 outline-0 border-b border-slate-100 py-1">
+                              <p class="w-3/4 flex items-center">Desktop grid</p>
+                              <input type="number" min="1" value="6" class="w-1/4 pl-1 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select date">
+                          </div>
+
+                          <div class="flex items-center p-1">
+                              <p class="w-3/4 flex items-center">Mobile grid</p>
+                              <input type="number" min="1" value="2" class="w-1/4 pl-1 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select date">
+                          </div>
+                          
+                      </div>
+                  </div>
+
+
+                  </div>
+                </div>
+            </div>
+            <!-- Content end -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+          function openBoxes() {
+              var numberInput = document.getElementById("numberInput");
+              var boxContainer = document.getElementById("boxContainer");
+  
+              var selectedNumbers = parseInt(numberInput.value);
+  
+              // Remove existing boxes
+              var existingBoxes = document.getElementsByClassName("box");
+              while (existingBoxes.length > 0) {
+                  existingBoxes[0].remove();
+              }
+  
+              for (var i = 1; i <= selectedNumbers; i++) {
+                  var box = document.createElement("div");
+                  box.className = "box";
+                  box.innerHTML = `<div class="bg-white p-2 mt-0 m-2">
+                            <input name="file1" type="file" class="dropify max-w-full shadow-none mb-2" data-height="150" />
+                            <div class="flex items-center">
+                                <div class="w-1/3 flex flex-col items-center p-1 outline-0 border-b border-slate-100 py-1">
+                                    <p class="w-full flex items-center">Rounded</p>
+                                    <div class="w-full relative border border-slate-500 text-gray-800 bg-white ">
+                                        <select class="appearance-none w-full pl-1 bg-white outline-0" >
+                                            <option value="rounded-none">None</option>
+                                            <option value="rounded">rounded</option>
+                                            <option value="rounded-md">rounded-md</option>
+                                            <option value="rounded-full">full 50%</option>
+                                        </select>
+                                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                                            <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="w-1/3 flex flex-col pr-1 py-1">
+                                    <p class="w-full flex items-center">BG Color</p>
+                                    <input type="color" value="#fffff" class="w-full mt-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select color">
+                                </div>
+                                <div class="w-1/3 flex flex-col pl-1 py-1">
+                                    <p class="w-full flex items-center">BG class</p>
+                                    <input type="text" class="w-full pl-2 mt-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select class">
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-6/12 flex pr-1 py-1">
+                                    <p class="w-3/4 flex items-center">Padding</p>
+                                    <input type="text" value="5px" class="w-6/12 pl-1 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select color">
+                                </div>
+                                <div class="w-6/12 flex pl-1 py-1">
+                                    <p class="w-6/12 flex items-center">Margin</p>
+                                    <input type="text" value="5px" class="w-6/12 pl-1 ml-1 outline-0 border border-slate-500 datepicker-input" placeholder="Select class">
+                                </div>
+                            </div>
+                            <div class="flex flex-col">
+                                <textarea placeholder="Enter your title" class="my-1 outline-0 border border-slate-300 text-grey-darkest flex-1 p-2 bg-transparent" name="tt"></textarea>
+                                <input type="text" class="w-full outline-0 border border-slate-300 px-1 my-1" placeholder="Subtitle">
+                                <input type="text" class="w-full outline-0 border border-slate-300 px-1 my-1" placeholder="Childtitle">
+                            </div>
+                            <div class="flex items-center">
+                                <input type="text" class="w-6/12 outline-0 border border-slate-300 px-1 my-1 mr-1" placeholder="Subtitle">
+                                <input type="text" class="w-6/12 outline-0 border border-slate-300 px-1 my-1 ml-1" placeholder="Childtitle">
+                            </div>
+                            <div class="flex flex-col">
+                                <input type="url" value="#" class="w-full outline-0 border border-slate-300 px-1 my-1" placeholder="Enter your link">
+                            </div>
+                        </div>`;
+                  boxContainer.appendChild(box);
+                  box.style.display = "block";
+              }
+          }
+        </script>
+        <!--- dropify end --->
+        <script type="text/javascript" src="https://jeremyfagis.github.io/dropify/dist/js/dropify.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="https://jeremyfagis.github.io/dropify/dist/css/dropify.min.css">
+        <script type="text/javascript">$('.dropify').dropify();</script>
+        <!--- dropify end --->
+        <script src="https://cdn.tailwindcss.com/3.3.1"></script>
+        <script src="https://unpkg.com/alpinejs" defer></script>
+    </body>
+</html>

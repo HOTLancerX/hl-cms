@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>profile</title>
+    </head>
+    <body>
+		<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+			<h1 class="text-4xl mb-10 mt-4 font-blod">User profile</h1>
+
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Visual Editor</span>
+				</div>
+				<div class="flex flex-grow flex-auto leading-normal flex-1">
+	                <input type="checkbox" name="type[]" value="all" class="inline-block mr-2" />Disable the visual editor when writing
+	            </div>
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Post active</span>
+				</div>
+				<div class="flex flex-grow flex-auto leading-normal flex-1">
+	                <input type="checkbox" name="type[]" value="all" class="inline-block mr-2" />automatically post approved
+	            </div>
+			</div>
+
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Keyboard Shortcuts</span>
+				</div>
+				<div class="flex flex-grow flex-auto leading-normal flex-1">
+	                <input type="checkbox" name="type[]" value="all" class="inline-block mr-2" />Keyboard Shortcuts
+	            </div>
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Toolbar</span>
+				</div>
+				<div class="flex flex-grow flex-auto leading-normal flex-1">
+	                <input type="checkbox" name="type[]" value="all" class="inline-block mr-2" />Show Toolbar when viewing site
+	            </div>
+			</div>
+
+			<h1 class="text-3xl mb-10 mt-4 font-blod">Name</h1>
+
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Username</span>
+				</div>				
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your website title">	
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">First Name</span>
+				</div>				
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">	
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Last Name</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Nickname (required)</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Display name publicly as</span>
+				</div>
+				<div class="relative border border-slate-200 text-gray-800 bg-white py-1 ">
+	                  <select class="appearance-none w-full py-1 px-2 bg-white outline-0 mr-10" name="whatever" id="frm-whatever">
+	                    <option value="">Please choose&hellip;</option>
+	                    <option value="1">User</option>
+	                    <option value="2">Editor</option>
+	                    <option value="3">Staff</option>
+	                    <option value="4">Reporter</option>
+	                    <option value="5">Administrator</option>
+	                  </select>
+	                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+	                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+	                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+	                      </svg>
+	                  </div>
+	            </div>	
+			</div>
+
+
+			<h1 class="text-3xl mb-10 mt-4 font-blod">Contact Info</h1>
+
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Email (required)</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Website</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Facebook profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Instagram profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">LinkedIn profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">MySpace profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Pinterest profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">SoundCloud profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Tumblr profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Twitter username (without @)</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">YouTube profile URL</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Wikipedia page about you</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+
+			<h1 class="text-3xl mb-10 mt-4 font-blod">About Yourself</h1>
+
+
+
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Biographical Info</span>
+				</div>
+				<textarea placeholder="enter your title" rows="3" class="outline-0 text-grey-darkest md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border border-grey-light p-3 relative outline-0 w-full" name="tt"></textarea>
+			</div>
+
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Profile Picture	</span>
+				</div>
+				<input type="file" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">New Password</span>
+				</div>
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">
+			</div>
+
+			<button class="rounded-lg px-4 py-1 mr-2 mb-4 bg-sky-500 text-blue-100 hover:bg-blue-600 duration-300">Save Changes</button>
+		</div>
+		
+		
+		
+		
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://unpkg.com/alpinejs" defer></script>
+    </body>
+</html>

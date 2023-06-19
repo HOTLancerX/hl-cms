@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Dashboard</title>
+    </head>
+    <body>
+		<div class="max-w-8xl mx-auto px-4 sm:px-6 md:px-8">
+			<h1 class="text-4xl mb-10 mt-4 font-blod">General Settings</h1>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Site Title</span>
+				</div>				
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your website title">	
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Tagline</span>
+				</div>				
+				<input type="text" class="md:max-w-md flex-shrink flex-grow flex-auto leading-normal flex-1 border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your Tagline title">	
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Email Address</span>
+				</div>
+				<div class="flex-shrink flex-grow flex-auto leading-normal flex-1">
+					<input type="text" class="md:max-w-md border h-10 border-grey-light p-3 relative outline-0 w-full" placeholder="enter your email address">
+					<p class="text-sm">This address is used for admin purposes. If you change this, an email will be sent to your new address to confirm it.<br><strong class="text-slate-500">The new address will not become active until confirmed.</strong></p>	
+				</div>			
+				
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Membership</span>
+				</div>
+				<div class="flex flex-grow flex-auto leading-normal flex-1">
+	                <input type="checkbox" name="type[]" value="all" class="inline-block mr-2" />Anyone can register
+	            </div>
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">New User Default Role</span>
+				</div>
+				<div class="relative border border-slate-200 text-gray-800 bg-white py-1 ">
+	                  <select class="appearance-none w-full py-1 px-2 bg-white outline-0 mr-10" name="whatever" id="frm-whatever">
+	                    <option value="">Please choose&hellip;</option>
+	                    <option value="1">User</option>
+	                    <option value="2">Editor</option>
+	                    <option value="3">Staff</option>
+	                    <option value="4">Reporter</option>
+	                    <option value="5">Administrator</option>
+	                  </select>
+	                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+	                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+	                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+	                      </svg>
+	                  </div>
+	            </div>	
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Site Language</span>
+				</div>
+				<div class="relative border border-slate-200 text-gray-800 bg-white py-1 ">
+	                  <select class="appearance-none w-full py-1 px-2 bg-white outline-0 mr-10" name="whatever" id="frm-whatever">
+	                    <option value="1">English</option>
+	                    <option value="2">Bangla</option>
+	                    <option value="3">Staff</option>
+	                    <option value="4">Reporter</option>
+	                    <option value="5">Administrator</option>
+	                  </select>
+	                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+	                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+	                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+	                      </svg>
+	                  </div>
+	            </div>	
+			</div>
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Timezone</span>
+				</div>
+				<div class="relative border border-slate-200 text-gray-800 bg-white py-1 ">
+	                  <select class="appearance-none w-full py-1 px-2 bg-white outline-0 mr-10" name="whatever" id="frm-whatever">
+	                    <option value="1">UTC+0</option>
+	                    <option value="2">Editor</option>
+	                    <option value="3">Staff</option>
+	                    <option value="4">Reporter</option>
+	                    <option value="5">Administrator</option>
+	                  </select>
+	                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+	                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+	                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+	                      </svg>
+	                  </div>
+	            </div>	
+			</div>
+
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Date Format</span>
+				</div>
+				<fieldset class="flex-shrink flex-grow flex-auto leading-normal flex-1">
+				    <label class="mb-2">
+				    	<input type="radio" name="date_format" value="F j, Y" checked="checked" />
+				    	<span class="date-time-text format-i18n">September 23, 2022</span>
+				    	<code>F j, Y</code>
+				    </label><br />
+				    <label class="mb-2">
+				    	<input type="radio" name="date_format" value="Y-m-d" />
+				    	<span class="date-time-text format-i18n">2022-09-23</span>
+				    	<code>Y-m-d</code>
+				    </label><br />
+				    <label class="mb-2">
+				    	<input type="radio" name="date_format" value="m/d/Y" />
+				    	<span class="date-time-text format-i18n">09/23/2022</span>
+				    	<code>m/d/Y</code>
+				    </label><br />
+				    <label class="mb-2">
+				    	<input type="radio" name="date_format" value="d/m/Y" />
+				    	<span class="date-time-text format-i18n">23/09/2022</span>
+				    	<code>d/m/Y</code>
+				    </label><br />
+				    <label class="mb-2">
+				        <input type="radio" name="date_format" id="date_format_custom_radio" value="\c\u\s\t\o\m" />
+				        <span class="date-time-text date-time-custom-text">Custom:</span>
+				    </label>
+			    	<input type="text" name="date_format_custom" id="date_format_custom" value="F j, Y" class="small-text border-2 h-6 border-grey-light p-2 relative outline-0" /><br />
+				    <p>
+				    	<strong>Preview:</strong>
+				    	<span class="example">September 23, 2022</span>
+				    	<span class="spinner"></span>
+				    </p>
+				</fieldset>
+			</div>
+
+			<div class="flex flex-wrap md:flex-row md:items-start items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Date Format</span>
+				</div>
+				<fieldset class="flex-shrink flex-grow flex-auto leading-normal flex-1">
+				    <label>
+				    	<input type="radio" name="time_format" value="g:i a" checked="checked" />
+				    	<span class="date-time-text format-i18n">8:12 am</span>
+				    	<code>g:i a</code>
+				    </label><br />
+				    <label>
+				    	<input type="radio" name="time_format" value="g:i A" />
+				    	<span class="date-time-text format-i18n">8:12 AM</span>
+				    	<code>g:i A</code>
+				    </label><br />
+				    <label>
+				    	<input type="radio" name="time_format" value="H:i" />
+				    	<span class="date-time-text format-i18n">08:12</span>
+				    	<code>H:i</code>
+				    </label><br />
+				    <label>
+				        <input type="radio" name="time_format" id="time_format_custom_radio" value="\c\u\s\t\o\m" />
+				        <span class="date-time-text date-time-custom-text">Custom:</span>
+				    </label>
+				    <input type="text" name="time_format_custom" id="time_format_custom" value="g:i a" class="small-text" /><br />
+				    <p>
+				    	<strong>Preview:</strong>
+				    	<span class="example">8:12 am</span>
+				    	<span class="spinner"></span>
+				    </p>
+				    <p class="date-time-doc">
+				    	<a href="#">Documentation on date and time formatting</a>.
+				    </p>
+				</fieldset>
+			</div>
+
+			<div class="flex flex-wrap md:flex-row md:items-center items-stretch w-full mb-4 relative flex-col items-start">
+				<div class="flex -mr-px md:w-1/5">
+					<span class="flex items-center leading-normal p-2 whitespace-no-wrap text-grey-dark text-lg">Week Starts On</span>
+				</div>
+				<div class="relative border border-slate-200 text-gray-800 bg-white py-1 ">
+	                  <select class="appearance-none w-full py-1 px-2 bg-white outline-0 mr-10" name="whatever" id="frm-whatever">
+	                    <option value="1">Sunday</option>
+	                    <option value="2">Monday</option>
+	                    <option value="3">Tuesday</option>
+	                    <option value="4">Wednesday</option>
+	                    <option value="5">Thursday</option>
+	                    <option value="6">Friday</option>
+	                    <option value="7">Saturday</option>
+	                  </select>
+	                  <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+	                      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+	                          <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+	                      </svg>
+	                  </div>
+	            </div>	
+			</div>
+			<button class="rounded-lg px-4 py-1 mr-2 mb-4 bg-sky-500 text-blue-100 hover:bg-blue-600 duration-300">Save Changes</button>
+		</div>
+		
+		
+		
+		
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://unpkg.com/alpinejs" defer></script>
+    </body>
+</html>

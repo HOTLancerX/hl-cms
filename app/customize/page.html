@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>customize</title>
+<style>
+label:after {
+  content: '+';
+  width: 40px;
+  height: 100%;
+  color: #7C7C7C;
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 1px solid #d7d4d4;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+input:checked + label:after {
+  content: '-';font-size: 20px;
+}
+
+.accordion__content{
+  max-height: 0em;
+  transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+input[name='panel']:checked ~ .accordion__content {
+  /* Get this as close to what height you expect */
+  max-height: 50em;
+}
+</style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="bg-white w-full">
+      <div class="flex flex-col text-center md:py-8 py-2">
+        <h2 class="md:text-5xl text-2xl mb-2">HOTLancer customize</h2>
+        <p class="md:text-lg text-base">Configure theme settings, change colors, typography, layout and more...</p>
+      </div>
+    </div>
+    <div class="container mx-auto mt-8 md:p-8 p-2">
+      <div class="mx-auto flex flex-row items-stretch justify-center w-full bg-white border border-gray-300" x-data="{tab: 1}">
+        <div class="flex flex-col justify-start w-1/4 text-lx">
+          <a
+          class="p-3 bg-[#E8E8E8] border-b border-l border-gray-300 flex items-center"
+          :class="{'z-20 bg-white': tab === 1, '': tab !== 1}"
+          href="#"
+          @click.prevent="tab = 1">
+          <svg class="stroke-black stroke-2 mr-2" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="24" cy="24" r="23" stroke-linejoin="round"></circle> <path d="M23 1C23 1 15 10.4901 15 24C15 37.5099 23 47 23 47" stroke-linejoin="round"></path> <path d="M25 1C25 1 33 10.4901 33 24C33 37.5099 25 47 25 47" stroke-linejoin="round"></path> <path d="M1 24H47"></path> </svg>
+          General</a>
+          <a
+          class="p-3 bg-[#E8E8E8] border-b border-l border-gray-300 flex items-center"
+          :class="{'z-20 bg-white': tab === 2, '': tab !== 2}"
+          href="#"
+          @click.prevent="tab = 2">
+          <svg class="stroke-black stroke-2 mr-2" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="24" cy="24" r="23" stroke-linejoin="round"></circle> <path d="M23 1C23 1 15 10.4901 15 24C15 37.5099 23 47 23 47" stroke-linejoin="round"></path> <path d="M25 1C25 1 33 10.4901 33 24C33 37.5099 25 47 25 47" stroke-linejoin="round"></path> <path d="M1 24H47"></path> </svg>
+          Header</a>
+          <a
+          class="p-3 bg-[#E8E8E8] border-b border-l border-gray-300 flex items-center"
+          :class="{'z-20 bg-white': tab === 3, '': tab !== 3}"
+          href="#"
+          @click.prevent="tab = 3">
+          <svg class="stroke-black stroke-2 mr-2" width="20" height="20" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"> <circle cx="24" cy="24" r="23" stroke-linejoin="round"></circle> <path d="M23 1C23 1 15 10.4901 15 24C15 37.5099 23 47 23 47" stroke-linejoin="round"></path> <path d="M25 1C25 1 33 10.4901 33 24C33 37.5099 25 47 25 47" stroke-linejoin="round"></path> <path d="M1 24H47"></path> </svg>
+          Share Box</a>
+        </div>
+        <div class="w-3/4 p-4 pb-0">
+          <div x-show="tab === 1">
+            <div class="md:flex md:items-center px-2 pb-4 mb-4 border-b border-gray-100">
+              <div class="md:w-6/12">
+                <h1 class="text-sm font-bold">Page Boxed Style</h1>
+                <p class="text-sm mr-2">Select whether you want a boxed or a full width layout. Default option image shows what default style selected in theme options.</p>
+              </div>
+              <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                  <option value="w-full" selected="selected">Full Width</option>
+                  <option value="container mx-auto">Boxed</option>
+                </select>
+                <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                  <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion text-black">
+              <!--  Panel 1  -->
+              <div class="w-full border border-grey-300 mb-4">
+                <input type="checkbox" name="panel" id="panel-3" class="hidden">
+                <label for="panel-3" class="relative block bg-gray-100 p-3 font-bold">Site Width</label>
+                <div class="accordion__content overflow-hidden bg-white">
+                  <div class="accordion__body" id="panel1">
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Layout</h1>
+                        <p class="text-sm">Select header layout.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <optgroup label="Lock Inside Page Layout">
+                            <option value="boxed">Boxed header</option>
+                            <option value="full-width" selected="selected">Full width header (Boxed Content)</option>
+                            <option value="stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                          <optgroup label="Out Of Page Layout">
+                              <option value="out-full-width">Full width header (Boxed Content)</option>
+                              <option value="out-stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Columns Gap</h1>
+                        <p class="text-sm">Enter space between columns.                        </p>
+                      </div>
+                      <input class="w-full p-1 border outline-0 max-w-md border-slate-400 rounded" type="text" name="name" placeholder="p-2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Panel 2 -->
+              <div class="w-full border border-grey-300 mb-4">
+                <input type="checkbox" name="panel" id="panel-4" class="hidden">
+                <label for="panel-4" class="relative block bg-gray-100 p-3 font-bold">Site Logo</label>
+                <div class="accordion__content overflow-hidden bg-white">
+                  <div class="accordion__body" id="panel2">
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Layout</h1>
+                        <p class="text-sm">Select header layout.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <optgroup label="Lock Inside Page Layout">
+                            <option value="boxed">Boxed header</option>
+                            <option value="full-width" selected="selected">Full width header (Boxed Content)</option>
+                            <option value="stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                          <optgroup label="Out Of Page Layout">
+                              <option value="out-full-width">Full width header (Boxed Content)</option>
+                              <option value="out-stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Style</h1>
+                        <p class="text-sm">Select header style.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white">
+                          <option value="Header-1">Header 1</option>
+                          <option value="Header-2">Header 2</option>
+                          <option value="Header-3">Header 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Main Menu Sticky</h1>
+                        <p class="text-sm">Enable or disable sticky effect for main menu.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white">
+                          <option value="smart">Smart Sticky</option>
+                          <option value="sticky">Simple Sticky</option>
+                          <option value="no-sticky" selected="selected">No Sticky</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Show Search Box In Menu</h1>
+                        <p class="text-sm">Choose to show or hide search form in menu.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <option value="show">Show</option>
+                          <option value="hide" selected="selected">Hide</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Padding</h1>
+                        <p class="text-sm">In pixels without px, ex: 20.</p>
+                      </div>
+                      <input class="w-full p-1 border outline-0 max-w-md border-slate-400 rounded" type="text" name="name" placeholder="p-2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Panel 2-->
+            </div>
+            
+
+          </div>
+          <div x-show="tab === 2">
+            <div class="accordion text-black">
+              <!--  Panel 1  -->
+              <div class="w-full border border-grey-300 mb-4">
+                <input type="checkbox" name="panel" id="panel-1" class="hidden">
+                <label for="panel-1" class="relative block bg-gray-100 p-3 font-bold">Header Style & Layout</label>
+                <div class="accordion__content overflow-hidden bg-white">
+                  <div class="accordion__body" id="panel1">
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Layout</h1>
+                        <p class="text-sm">Select header layout.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <optgroup label="Lock Inside Page Layout">
+                            <option value="boxed">Boxed header</option>
+                            <option value="full-width" selected="selected">Full width header (Boxed Content)</option>
+                            <option value="stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                          <optgroup label="Out Of Page Layout">
+                              <option value="out-full-width">Full width header (Boxed Content)</option>
+                              <option value="out-stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Style</h1>
+                        <p class="text-sm">Select header style.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white">
+                          <option value="Header-1">Header 1</option>
+                          <option value="Header-2">Header 2</option>
+                          <option value="Header-3">Header 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Main Menu Sticky</h1>
+                        <p class="text-sm">Enable or disable sticky effect for main menu.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white">
+                          <option value="smart">Smart Sticky</option>
+                          <option value="sticky">Simple Sticky</option>
+                          <option value="no-sticky" selected="selected">No Sticky</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Show Search Box In Menu</h1>
+                        <p class="text-sm">Choose to show or hide search form in menu.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <option value="show">Show</option>
+                          <option value="hide" selected="selected">Hide</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Padding</h1>
+                        <p class="text-sm">In pixels without px, ex: 20.</p>
+                      </div>
+                      <input class="w-full p-1 border outline-0 max-w-md border-slate-400 rounded" type="text" name="name" placeholder="p-2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Panel 2 -->
+              <div class="w-full border border-grey-300 mb-4">
+                <input type="checkbox" name="panel" id="panel-2" class="hidden">
+                <label for="panel-2" class="relative block bg-gray-100 p-3 font-bold">Site Logo</label>
+                <div class="accordion__content overflow-hidden bg-white">
+                  <div class="accordion__body" id="panel2">
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Layout</h1>
+                        <p class="text-sm">Select header layout.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <optgroup label="Lock Inside Page Layout">
+                            <option value="boxed">Boxed header</option>
+                            <option value="full-width" selected="selected">Full width header (Boxed Content)</option>
+                            <option value="stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                          <optgroup label="Out Of Page Layout">
+                              <option value="out-full-width">Full width header (Boxed Content)</option>
+                              <option value="out-stretched">Full width header (Stretched Content)</option>
+                          </optgroup>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Style</h1>
+                        <p class="text-sm">Select header style.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white">
+                          <option value="Header-1">Header 1</option>
+                          <option value="Header-2">Header 2</option>
+                          <option value="Header-3">Header 3</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Main Menu Sticky</h1>
+                        <p class="text-sm">Enable or disable sticky effect for main menu.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white">
+                          <option value="smart">Smart Sticky</option>
+                          <option value="sticky">Simple Sticky</option>
+                          <option value="no-sticky" selected="selected">No Sticky</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Show Search Box In Menu</h1>
+                        <p class="text-sm">Choose to show or hide search form in menu.</p>
+                      </div>
+                      <div class="relative w-full border outline-0 max-w-md border-slate-400 rounded">
+                        <select class="appearance-none outline-0 w-full py-1 px-2 bg-white" name="whatever" id="frm-whatever">
+                          <option value="show">Show</option>
+                          <option value="hide" selected="selected">Hide</option>
+                        </select>
+                        <div class="pointer-events-none absolute right-0 top-0 bottom-0 flex items-center px-2 text-gray-700 border-l">
+                          <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="md:flex md:items-center p-3 mb-2 border-b border-gray-100">
+                      <div class="md:w-6/12">
+                        <h1 class="text-sm font-bold">Header Padding</h1>
+                        <p class="text-sm">In pixels without px, ex: 20.</p>
+                      </div>
+                      <input class="w-full p-1 border outline-0 max-w-md border-slate-400 rounded" type="text" name="name" placeholder="p-2">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--Panel 2-->
+            </div>
+          </div>
+          <div x-show="tab === 3">
+          3
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+    
+    <script src="https://cdn.tailwindcss.com/3.3.1"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+  </body>
+</html
